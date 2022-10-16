@@ -14,6 +14,8 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: Build with Maven
-      - run:  mvn install -DskipTests -pl neo4j -am
-      - run:  mvn -pl neo4j test -Dtest=org.hibernate.ogm.backendtck.storedprocedures.NamedParametersStoredProcedureCallTest#testResultSetDynamicCallWithResultClass
-      - run:  mvn -pl neo4j edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.hibernate.ogm.backendtck.storedprocedures.NamedParametersStoredProcedureCallTest#testResultSetDynamicCallWithResultClass
+        run:  mvn install -DskipTests -pl neo4j -am
+      - name: Run test initial
+        run:  mvn -pl neo4j test -Dtest=org.hibernate.ogm.backendtck.storedprocedures.NamedParametersStoredProcedureCallTest#testResultSetDynamicCallWithResultClass
+      - name: Run test with nondex
+        run:  mvn -pl neo4j edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.hibernate.ogm.backendtck.storedprocedures.NamedParametersStoredProcedureCallTest#testResultSetDynamicCallWithResultClass
