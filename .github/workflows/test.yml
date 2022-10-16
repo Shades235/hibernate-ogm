@@ -18,4 +18,4 @@ jobs:
       - name: Run test initial
         run:  mvn -pl neo4j test -Dtest=org.hibernate.ogm.backendtck.storedprocedures.NamedParametersStoredProcedureCallTest#testResultSetDynamicCallWithResultClass
       - name: Run test with nondex
-        run:  mvn -pl neo4j edu.illinois:nondex-maven-plugin:1.1.2:nondex -DnondexRuns=100 -Dtest=org.hibernate.ogm.backendtck.storedprocedures.NamedParametersStoredProcedureCallTest#testResultSetDynamicCallWithResultClass
+        run:  mvn -pl neo4j edu.illinois:nondex-maven-plugin:1.1.2:nondex -DnondexRuns=10 -Dtest=org.hibernate.ogm.backendtck.storedprocedures.NamedParametersStoredProcedureCallTest#testResultSetDynamicCallWithResultClass
